@@ -10,7 +10,7 @@ public class Code02_Sort {
      *
      * @param arr
      */
-    public static void selectionSorted(int[] arr) {
+    public static void selectionSort(int[] arr) {
         //边界条件
         if (arr == null || arr.length < 2) {
             return;
@@ -40,7 +40,7 @@ public class Code02_Sort {
      *
      * @param arr
      */
-    public static void bubbleSorted(int[] arr) {
+    public static void bubbleSort(int[] arr) {
         if (arr == null || arr.length < 2) {
             return;
         }
@@ -53,6 +53,50 @@ public class Code02_Sort {
                 if (arr[second - 1] > arr[second]) {//如果第二个数比第一个数小的话，交换索引
                     swap(arr, second - 1, second);
                 }
+            }
+        }
+    }
+
+    /**
+     * 插入排序
+     * 0~0
+     * 0~1
+     * 0~2
+     * ...
+     * N
+     * 以上每个范围内的两两个数之间进行比较，小的放左边，每次插入一个数(扩大一个范围)
+     * 插入一个数，先放在后面，然后和前面以为比较大小，然后在和前前位进行比较
+     *
+     * @param arr
+     */
+    public static void insertSort01(int[] arr) {
+        if (arr == null || arr.length < 2) {
+            return;
+        }
+
+        int N = arr.length;
+
+        for (int end = 1; end < N; end++) {
+            int newNumIndex = end;//即将要插入的数的位置
+            while (newNumIndex - 1 >= 0 && arr[newNumIndex - 1] > arr[newNumIndex]) {//说明左边有数,并且比我要插入的数大，那么交换
+                swap(arr, newNumIndex - 1, newNumIndex);
+                newNumIndex--;//while终止条件：左边没有数了，或者左边的数比较小
+            }
+        }
+    }
+
+    public static void insertSort02(int[] arr) {
+        if (arr == null || arr.length < 2) {
+            return;
+        }
+
+        int N = arr.length;
+
+        //插入的数一开始在end上
+        for (int end = 1; end < N; end++) {
+            //pre是插入的数的前一个位置，是end-1
+            for (int pre = end - 1; pre >= 0 && arr[pre] > arr[pre + 1]; pre--) {
+                swap(arr, pre, pre + 1);
             }
         }
     }
@@ -73,7 +117,7 @@ public class Code02_Sort {
     public static void main(String[] args) {
         int[] arr = {5, 1, 9, 4, 1, 6, 9, 6, 6,};
         printArray(arr);
-        bubbleSorted(arr);
+        insertSort02(arr);
         printArray(arr);
     }
 
