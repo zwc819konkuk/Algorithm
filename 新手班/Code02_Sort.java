@@ -34,6 +34,29 @@ public class Code02_Sort {
 
     }
 
+    /**
+     * 冒泡排序
+     * 两个数之间的一直比较，较小的在前面，第一轮选出了最大的数放在最后
+     *
+     * @param arr
+     */
+    public static void bubbleSorted(int[] arr) {
+        if (arr == null || arr.length < 2) {
+            return;
+        }
+
+        int N = arr.length;
+        for (int end = N - 1; end >= 0; end--) {
+            //01 12 34 .. end-1 end
+            //second 是1 2 3...
+            for (int second = 1; second <= end; second++) {
+                if (arr[second - 1] > arr[second]) {//如果第二个数比第一个数小的话，交换索引
+                    swap(arr, second - 1, second);
+                }
+            }
+        }
+    }
+
     public static void swap(int[] arr, int i, int j) {
         int tmp = arr[j];
         arr[j] = arr[i];
@@ -50,7 +73,7 @@ public class Code02_Sort {
     public static void main(String[] args) {
         int[] arr = {5, 1, 9, 4, 1, 6, 9, 6, 6,};
         printArray(arr);
-        selectionSorted(arr);
+        bubbleSorted(arr);
         printArray(arr);
     }
 
