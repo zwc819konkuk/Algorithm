@@ -20,7 +20,7 @@ public class Code02_Sort {
         //0 ~ n-1
         //1 ~ n-1
         //2 ~ n-1
-        for (int i = 0; i < N; i++) {
+        for (int i = 0; i < N - 1; i++) {
             //0 ~ n-1
             //1 ~ n-1
             //2 ~ n-1
@@ -47,7 +47,7 @@ public class Code02_Sort {
 
         int N = arr.length;
         for (int end = N - 1; end >= 0; end--) {
-            //01 12 34 .. end-1 end
+            //01 12 23 .. end-1 end
             //second 是1 2 3...
             for (int second = 1; second <= end; second++) {
                 if (arr[second - 1] > arr[second]) {//如果第二个数比第一个数小的话，交换索引
@@ -64,8 +64,8 @@ public class Code02_Sort {
      * 0~2
      * ...
      * N
-     * 以上每个范围内的两两个数之间进行比较，小的放左边，每次插入一个数(扩大一个范围)
-     * 插入一个数，先放在后面，然后和前面以为比较大小，然后在和前前位进行比较
+     * 以上每个范围内的两两个数之间进行比较，保证这个范围内有序，小的放左边，每次插入一个数(扩大一个范围)
+     * 插入一个数，先放在后面，然后和前面以为比较大小，然后在和前前位进行比较...
      *
      * @param arr
      */
@@ -108,8 +108,8 @@ public class Code02_Sort {
     }
 
     public static void printArray(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
+        for (int value : arr) {
+            System.out.print(value + " ");
         }
         System.out.println();
     }
@@ -117,7 +117,7 @@ public class Code02_Sort {
     public static void main(String[] args) {
         int[] arr = {5, 1, 9, 4, 1, 6, 9, 6, 6,};
         printArray(arr);
-        insertSort02(arr);
+        selectionSort(arr);
         printArray(arr);
     }
 
