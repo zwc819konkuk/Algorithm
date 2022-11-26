@@ -125,7 +125,7 @@ public class Code02_Sort {
             int[] arr = generateRandomArray(maxSize, maxValue);
             int[] arr1 = copyArray(arr);
             int[] arr2 = copyArray(arr);
-            insertSort01(arr1);
+            bubbleSort(arr1);
             comparator(arr2);
             if (!isEqual(arr1, arr2)) {
                 succeed = false;
@@ -135,7 +135,7 @@ public class Code02_Sort {
         System.out.println(succeed ? "Nice" : "fuck");
         int[] arr = generateRandomArray(maxSize, maxValue);
         printArray(arr);
-        insertSort01(arr);
+        bubbleSort(arr);
         printArray(arr);
     }
 
