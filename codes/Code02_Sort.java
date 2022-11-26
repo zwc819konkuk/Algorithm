@@ -1,4 +1,4 @@
-package 新手班;
+package codes;
 
 import java.util.Arrays;
 

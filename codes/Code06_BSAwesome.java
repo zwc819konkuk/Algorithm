@@ -1,4 +1,4 @@
-package 体系班;
+package codes;
 
 public class Code06_BSAwesome {
 
@@ -26,5 +26,11 @@ public class Code06_BSAwesome {
             }
         }
         return left;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1,2,43,5,6,7,3};
+        int lessIndex = getLessIndex(arr);
+        System.out.println(lessIndex);
     }
 }

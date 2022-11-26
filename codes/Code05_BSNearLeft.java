@@ -1,4 +1,4 @@
-package 体系班;
+package codes;
 //找一个有序数组中大于等于某个数的最小索引值
 public class Code05_BSNearLeft {
 

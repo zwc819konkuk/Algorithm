@@ -1,4 +1,4 @@
-package 新手班;
+package codes;
 
 public class Code01_PrintB {
 
