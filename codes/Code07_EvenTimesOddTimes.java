@@ -1,4 +1,3 @@
-package codes;
 
 public class Code07_EvenTimesOddTimes {
 
